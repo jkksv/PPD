@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partido Populacional Democrático</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="ppd-removebg-preview.png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="image-removebg-preview.png" alt="Logo do Partido Populacional Democrático">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#valores">Nossos Valores</a></li>
+                <li><a href="#propostas">Propostas</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="https://www.instagram.com/ppd.025/">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="introducao">
+        <h1>Bem-vindo ao Partido Populacional Democrático</h1>
+        <p>Um futuro melhor para todos!</p>
+    </section>
+
+    <section id="sobre" class="sobre">
+        <h2>Sobre Nós</h2>
+        <p>O Partido Populacional Democrático é dedicado a construir um futuro melhor para todos, com transparência, igualdade e progresso. Nosso objetivo é promover o desenvolvimento nacional através de políticas públicas que priorizem a equidade, sustentabilidade e inovação.</p>
+    </section>
+
+    <section id="valores" class="valores">
+        <h2>Nossos Valores</h2>
+        <div class="valores-container">
+            <div class="valor">
+                <h3>Equidade</h3>
+                <p>Promovemos a justiça social e a igualdade de oportunidades para todos.</p>
+            </div>
+            <div class="valor">
+                <h3>Sustentabilidade</h3>
+                <p>Acreditamos em um desenvolvimento que respeita o meio ambiente e os recursos naturais.</p>
+            </div>
+            <div class="valor">
+                <h3>Inovação</h3>
+                <p>Buscamos soluções modernas e tecnológicas para os desafios do século XXI.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="propostas" class="propostas">
+        <h2>Nossas Propostas</h2>
+        <div class="propostas-container">
+            <div class="proposta">
+                <h3>Educação</h3>
+                <p>Transformação através da educação de qualidade e inclusiva.</p>
+                <a href="educacao.html">Saiba mais</a>
+            </div>
+            <div class="proposta">
+                <h3>Saúde</h3>
+                <p>Saúde universal e avançada para todos os cidadãos.</p>
+                <a href="saude.html">Saiba mais</a>
+            </div>
+            <div class="proposta">
+                <h3>Economia</h3>
+                <p>Economia dinâmica e sustentável para o crescimento do país.</p>
+                <a href="economia.html">Saiba mais</a>
+            </div>
+            <div class="proposta">
+                <h3>Segurança</h3>
+                <p>Segurança pública e governança eficiente.</p>
+                <a href="seguranca.html">Saiba mais</a>
+            </div>
+            <div class="proposta">
+                <h3>Infraestrutura</h3>
+                <p>Desenvolvimento regional e infraestrutura moderna.</p>
+                <a href="infraestrutura.html">Saiba mais</a>
+            </div>
+            <div class="proposta">
+                <h3>Inclusão Social</h3>
+                <p>Respeito e igualdade para todos os cidadãos.</p>
+                <a href="inclusao.html">Saiba mais</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <h2>Contato</h2>
+        <p>Instagram: @ppd.025</p>
+        <p>Telefone: (62) 2525-2525</p>
+        <p>&copy; 2025 Partido Populacional Democrático. Todos os direitos reservados.</p>
+    </footer>
+
+    <section class="cta">
+        <h2>Junte-se a Nós!</h2>
+        <a href="#contato" class="btn">VOTE 25</a>
+    </section>
+
+  <script>
+    // Verifica se é mobile
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    // Só executa em mobile
+    if (isMobile()) {
+        const header = document.querySelector('header');
+        const nav = document.querySelector('nav');
+        
+        // 1. Cria botão hamburger
+        const menuButton = document.createElement('button');
+        menuButton.className = 'menu-toggle';
+        menuButton.innerHTML = '☰';
+        header.prepend(menuButton);
+        
+        // 2. Cria botão fechar
+        const closeButton = document.createElement('button');
+        closeButton.className = 'close-menu';
+        closeButton.innerHTML = '×';
+        
+        // 3. Controle do menu
+        menuButton.addEventListener('click', () => {
+            nav.classList.add('active');
+            nav.appendChild(closeButton);
+        });
+        
+        closeButton.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
+        
+        // 4. Fecha menu ao clicar em links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+        
+        // 5. Atualiza ao redimensionar a tela
+        window.addEventListener('resize', () => {
+            if (!isMobile()) {
+                nav.classList.remove('active');
+            }
+        });
+    }
+</script>
+</body>
+</html>
